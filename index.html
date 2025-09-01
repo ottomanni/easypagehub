@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kotisivut yrityksellesi – Easypagehub</title>
+
+  <!-- SEO-perusmetat -->
+  <meta name="description" content="Easypagehub rakentaa moderneja, responsiivisia ja edullisia kotisivuja yrityksille ja yksityisille. Tilaa omat verkkosivut helposti!">
+  <meta name="keywords" content="kotisivut yritykselle, verkkosivut edullisesti, responsiiviset nettisivut, Easypagehub, web-suunnittelu">
+  <meta name="author" content="Easypagehub">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Kotisivut yrityksellesi – Easypagehub" />
+  <meta property="og:description" content="Modernit ja responsiiviset kotisivut yrityksille ja yksityishenkilöille." />
+  <meta property="og:image" content="https://www.easypagehub.fi/preview.jpg" />
+  <meta property="og:url" content="https://www.easypagehub.fi/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kotisivut yrityksellesi – Easypagehub" />
+  <meta name="twitter:description" content="Rakennan ammattimaisia ja responsiivisia kotisivuja yrityksille ja yksityisille." />
+  <meta name="twitter:image" content="https://www.easypagehub.fi/preview.jpg" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="easypagehub-favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+
+  <!-- Canonical link (välttää duplikaatit) -->
+  <link rel="canonical" href="https://www.easypagehub.fi/" />
+
+  <!-- Monikielisyyttä tukeva hreflang -->
+  <link rel="alternate" hreflang="fi" href="https://www.easypagehub.fi/" />
+  <link rel="alternate" hreflang="en" href="https://www.easypagehub.fi/en/" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="language-switcher">
+      <button onclick="setLanguage('fi')">Suomeksi</button>
+      <button onclick="setLanguage('en')">In English</button>
+    </div>
+
+    <h1 data-key="heroTitle"></h1>
+    <h3 data-key="heroSubtitle"></h3>
+    <a href="#contact" class="btn" data-key="heroBtn"></a>
+  </header>
+
+  <!-- Services -->
+  <section id="services">
+    <h2 data-key="servicesTitle"></h2>
+    <div class="grid">
+      <div class="card" tabindex="0" role="article">
+        <h3 data-key="service1Title"></h3>
+        <p data-key="service1Text"></p>
+        <p class="price" data-key="service1Price"></p>
+      </div>
+      <div class="card" tabindex="0" role="article">
+        <h3 data-key="service2Title"></h3>
+        <p data-key="service2Text"></p>
+        <p class="price" data-key="service2Price"></p>
+      </div>
+      <div class="card" tabindex="0" role="article">
+        <h3 data-key="service3Title"></h3>
+        <p data-key="service3Text"></p>
+        <p class="price" data-key="service3Price"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio">
+    <h2 data-key="portfolioTitle"></h2>
+    <div class="slider-container">
+      <button class="slider-btn left" onclick="scrollSlider(-1)">&#10094;</button>
+      <div class="slider-wrapper">
+        <div class="card" onclick="openDemo('yoga/yoga.html')">
+          <img src="yoga.png" alt="Kotisivut pienyrittäjälle" class="preview-img" />
+          <h3 data-key="card1Title"></h3>
+          <p data-key="card1Text"></p>
+        </div>
+        <div class="card" onclick="openDemo('aksu/aksunkuuset.html')">
+          <img src="aksu_ss.png" alt="Joulukuusi yritys nettikauppa verkkosivut" class="preview-img" />
+          <h3 data-key="card2Title"></h3>
+          <p data-key="card2Text"></p>
+        </div>
+        <div class="card" onclick="openDemo('https://www.specialeditionband.com/')">
+          <img src="specialedition_snapshot.png" alt="bändille kotisivut artistille sivut nettisivut" class="preview-img" />
+          <h3 data-key="card4Title"></h3>
+          <p data-key="card4Text"></p>
+        </div>
+        <div class="card" onclick="openDemo('https://www.innavisuals.com/')">
+          <img src="innavisuals.png" alt="valokuvaajan nettisivut kotisivut kuvaajalle" class="preview-img" />
+          <h3 data-key="card5Title"></h3>
+          <p data-key="card5Text"></p>
+        </div>
+        <div class="card" onclick="openDemo('https://www.kuusihimaan.com/')">
+          <img src="kuusihimaan.png" alt="verkkokauppa kotisivut edullisesti" class="preview-img" />
+          <h3 data-key="card6Title"></h3>
+          <p data-key="card6Text"></p>
+        </div>
+      </div>
+      <button class="slider-btn right" onclick="scrollSlider(1)">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- Modal esikatselulle -->
+  <div id="demoModal" class="modal" role="dialog" aria-modal="true" aria-label="Demo-esikatselu">
+    <span class="close" onclick="closeDemo()" aria-label="Sulje">&times;</span>
+    <iframe id="demoFrame" src="" title="Esikatselu"></iframe>
+    <div class="modal-footer">
+      <a id="openNewTab" href="#" target="_blank" rel="noopener" data-key="modalLink"></a>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2 data-key="contactTitle"></h2>
+    <form id="contact-form">
+      <input type="text" name="name" data-key="contactName" required />
+      <input type="email" name="email" data-key="contactEmail" required />
+      <textarea name="message" data-key="contactMessage" required></textarea>
+      <button type="submit" data-key="contactBtn"></button>
+    </form>
+    <p id="status"></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p data-key="footerText"></p>
+    <p><a href="mailto:info@easypagehub.fi">info@easypagehub.fi</a></p>
+  </footer>
+
+  <!-- JS-tiedostot -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="main.js"></script>
+  <script src="lang.js"></script>
+  <script>
+    // oletuskieli suomi
+    setLanguage('fi');
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Easypagehub",
+      "url": "https://www.easypagehub.fi",
+      "logo": "https://www.easypagehub.fi/logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "info@easypagehub.fi",
+        "contactType": "customer support",
+        "areaServed": "FI" "EN",
+        "availableLanguage": ["Finnish","English"]
+      }
+    }
+  </script>
+
+</body>
+</html>
