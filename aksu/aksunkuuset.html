@@ -1,0 +1,824 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aksun Joulukuuset</title>
+  <meta name="description" content="Suomessa itse kasvatettuja joulukuusia toimitettuna" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="logo.png">
+  <style>
+    :root{
+      --bg:#0c1210;
+      --surface:#141b18;
+      --surface-2:#1a2520;
+      --text:#edf6f2;
+      --muted:#b9c7c1;
+      --accent:#6bbf59;
+      --accent-2:#a3d69a;
+      --radius:18px;
+      --shadow:0 10px 28px rgba(0,0,0,.3);
+      --maxw:1200px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Montserrat,sans-serif;background:var(--bg);color:var(--text)}
+    img{max-width:100%;display:block}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrapper {
+      max-width: var(--maxw);
+      margin: auto;
+      padding: clamp(16px,3vw,28px);
+      /*background-image: url("1.webp");*/
+      background-size: cover;     /* kuva peittää koko taustan */
+      background-position: center; /* keskitys */
+    }
+
+/* HEADER */
+header {
+  position:sticky;
+  top:0;
+  z-index: 1200; /* nostettu yli social-bannerin */
+  background:rgba(0, 0, 0, 0.7);
+  backdrop-filter:blur(1px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  text-align:center;  /* keskitys */
+  padding:10px 0;
+}
+.nav-bar{
+  display:flex;
+  flex-direction:column;   /* logo ja nav eri riveille */
+  align-items:center;
+  gap:10px;
+}
+.logo-area{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  font-weight:700;
+  gap:8px;
+}
+.logo-img {
+  width: 64px;
+  height: auto;
+  border-radius: 10%; /* jos haluat pyöreän logon */
+}
+.nav-links{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.nav-links a{padding:10px 14px;border-radius:999px; color: #fff;}
+.nav-links a:hover{background:rgba(255,255,255,.06);color: var(--accent-2); /* Halutessasi eri väri hoverissa */}
+
+.menu-toggle {
+  display: none;
+  position: absolute;
+  top: 16px;
+  left:16px; /* siirretty vasempaan kulmaan */
+  padding: 8px;
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 12px;
+  background: transparent;
+  z-index: 1300; /* nappi varmasti ikonien päällä */
+}
+.menu-toggle span{display:block;width:24px;height:2px;background:var(--text);margin:5px 0}
+
+@media (max-width:900px){
+  .nav-links{display:none}
+  .menu-toggle{display:block}
+  .nav-links.open{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    background:var(--surface);
+    padding:14px;
+    border-radius:16px;
+    position:absolute;
+    top:70px;left:16px;right:16px;
+  }
+}
+
+/* HERO */
+.intro {
+  position: relative;
+  min-height: 72vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.intro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("tausta.png") center/cover no-repeat;
+  filter: brightness(0.9);   /* himmennys, säädä arvoa esim. 0.4–0.7 */
+  z-index: -2;
+}
+
+.intro::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(12,18,16,.6), transparent 40%);
+  z-index: -1;
+}
+
+.intro h1 {
+  font-family: Merriweather, serif;
+  font-size: clamp(32px, 5vw, 56px);
+  margin-bottom: 12px;
+}
+
+.intro p {
+  max-width: 800px;
+  margin: 0 auto 24px;
+  color: var(--muted);
+}
+
+/* PALVELUT - taustakuva */
+#yritys {
+  position: relative;
+  overflow: hidden;
+}
+
+#yritys::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #b9c7c1 center/cover no-repeat;
+  filter: brightness(0.5); /* himmennys kuten herossa */
+  z-index: -2;
+}
+
+#yritys::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(12,18,16,.6), transparent 40%);
+  z-index: -1;
+}
+
+#yritys .wrapper {
+  position: relative;
+  z-index: 1; /* sisältö pysyy taustan päällä */
+}
+
+/* Yritys - taustakuva */
+#yritys {
+  position: relative;
+  overflow: hidden;
+}
+
+#yritys::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("2.webp") center/cover no-repeat;
+  filter: brightness(1); /* himmennys kuten herossa */
+  z-index: -2;
+}
+
+#yritys::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(12,18,16,.6), transparent 40%);
+  z-index: -1;
+}
+
+#yritys .wrapper {
+  position: relative;
+  z-index: 1; /* sisältö pysyy taustan päällä */
+}
+
+#yhteys i {
+  color: var(--accent);
+  margin-right: 8px;
+}
+
+
+    /* SECTIONS */
+    section{padding:clamp(36px,6vw,80px) 0;border-top:1px solid rgba(255,255,255,.06)}
+    h2{font-family:Merriweather,serif;font-size:clamp(26px,3.4vw,40px);margin-bottom:12px}
+    .lead{color:var(--muted);margin-bottom:24px;max-width:900px}
+
+    /* GRID */
+    .grid{display:grid;gap:16px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    @media (max-width:900px){.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}}
+
+    .box{background:var(--surface);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .tag{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(107,191,89,.12);color:var(--accent-2);font-size:12px;font-weight:700}
+    .box h3{margin:10px 0 8px;font-size:22px}
+    .box p{color:var(--muted);margin:0}
+
+    /* FOOTER */
+    footer{background:#0a0f0d;border-top:1px solid rgba(255,255,255,.08)}
+    .foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:20px}
+    @media(max-width:900px){.foot{grid-template-columns:1fr}}
+    .small{font-size:13px;color:var(--muted)}
+
+    /* some ikonit */
+    .social-banner {
+        position: fixed;
+        top: 20px;
+        right: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        z-index: 1000;
+      }
+      .social-banner a {
+        text-decoration: none;
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        line-height: 40px;
+        font-size: 1.2em;
+        text-align: center;
+        color: white;
+      }
+      .fa-facebook { background: #3B5998; }
+      .fa-whatsapp { background: #25D366; }
+      .fa-envelope { background: #EA4335; }
+      .fab:hover, .fas:hover { opacity: 0.7; }
+
+    /* Tilauslomakkeet */
+    .order-form {
+      display: none;
+      margin-top: 12px;
+      padding: 12px;
+      background: var(--surface-2);
+      border-radius: var(--radius);
+    }
+    .toggle-form {
+      margin-top: 10px;
+      padding: 8px 14px;
+      border: none;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .toggle-form:hover {
+      background: var(--accent-2);
+    }
+.main-title {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.step {
+  text-align: center;
+  max-width: 160px;
+}
+
+.circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 20px;
+  margin: 0 auto 10px;
+  box-shadow: var(--shadow);
+}
+.step p {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 600;
+}
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 kuvasuhde */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.carousel img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 1s ease-in-out;
+}
+    /* KARUSELLI */
+    #cards-container {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin: 30px auto;
+      overflow: hidden;
+      border-radius: 20px;
+    }
+    #cards-wrapper {
+      display: flex;
+      gap: 20px;
+      transition: transform 0.5s ease;
+      cursor: grab;
+    }
+    #cards-wrapper:active { cursor: grabbing; }
+
+    .slide-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .slide-wrapper .card-name {
+      margin-top: 10px;
+      font-size: 1em;
+      color: white;
+      font-weight: bold;
+    }
+
+    .slide-wrapper img {
+      width: 300px;
+      height: auto;
+      border-radius: 20px;
+      object-fit: contain;
+      margin: 0 30px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .slide-wrapper img:hover {
+      transform: scale(1.05);
+    }
+
+    /* NUOLINAPIT */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      border: none;
+      color: white;
+      font-size: 2rem;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+      z-index: 10;
+    }
+    .carousel-btn:hover { background: rgba(0,0,0,0.7); }
+    #prevBtn { left: 10px; }
+    #nextBtn { right: 10px; }
+
+  </style>
+</head>
+<body>
+<!-- HEADER -->
+<header>
+    <div class="social-banner">
+      <a href="https://www.facebook.com/Aksunjoulukuuset" target="_blank" class="fab fa-facebook"></a>
+      <a href="mailto:info@aksunjoulukuuset.fi" target="_blank" class="fas fa-envelope"></a>
+    </div>
+  <div class="wrapper nav-bar">
+    <div class="logo-area">
+      <img src="logo.png" alt="Aksun Joulukuuset logo" class="logo-img">
+      <a href="#">Aksun Joulukuuset</a>
+    </div>
+    <nav class="nav-links">
+      <a href="aksunkuuset.html">Tilaa joulukuusi</a>
+      <a href="myyntipisteet.html">Myyntipisteet</a>
+      <a href="yrityksille.html">Yrityksille</a>
+      <a href="hoito-ohjeet.html">Hoito-ohjeet</a>
+      <a href="yrityksesta.html">Tietoa meistä</a>
+    </nav>
+  <button class="menu-toggle" aria-label="Valikko">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="intro" id="etusivu">
+  <div class="wrapper">
+    <h1>Aksun Joulukuuset</h1>
+    <h4>Suomalaiset joulukuuset: kotiin toimitettuna, retkellä haettuna tai tilalta noudettuna.</h4>
+  </div>
+</section>
+
+<!-- PALVELUT -->
+<section id="palvelut">
+  <div class="wrapper">
+
+    <!-- UUSI OTSIKKO JA VAIHEET -->
+    <h2 class="main-title">Tilaa joulukuusi kotiinkuljetettuna</h2>
+    <p id="promo-text" style="color: #6bbf59; font-weight: 600; margin-bottom: 20px; text-align: center;"></p>
+    <div class="steps">
+      <div class="step">
+        <div class="circle">1</div>
+        <p>Valitse alue</p>
+      </div>
+      <div class="step">
+        <div class="circle">2</div>
+        <p>Täytä tilauslomake</p>
+      </div>
+      <div class="step">
+        <div class="circle">3</div>
+        <p>Maksu toimituksen yhteydessä (MobilePay / Käteinen)</p>
+      </div>
+    </div>
+
+    <h2>1. Valitse alue</h2>
+<div class="grid cols-3">
+  <!-- Hyvinkää -->
+  <div class="box">
+    <span class="tag">Hyvinkää</span>
+    <h3>Hyvinkää</h3>
+    <p>Joulukuusen tilauslomake, katso avoimet päivät & tuotteet</p>
+    <button class="toggle-form" data-target="form-hyvinkaa">2. Tilaa nyt</button>
+    <form id="form-hyvinkaa" class="order-form" data-json="hyvinkaa.json">
+      <label>Nimi:<br><input type="text" name="name" required></label><br>
+      <label>Toimitusosoite:<br><input type="text" name="address" required></label><br>
+      <label>Puhelinnumero:<br><input type="tel" name="phone" required></label><br>
+      <label>Sähköposti:<br><input type="email" name="email" required></label><br>
+      <label>Kuusen koko:<br>
+        <select name="size" required></select>
+      </label><br>
+      <label>Toimituspäivä:<br>
+        <select name="deliveryDate" required></select>
+      </label><br>
+      <button type="submit">Lähetä</button>
+    </form>
+  </div>
+
+  <!-- Nurmijärvi -->
+  <div class="box">
+    <span class="tag">Nurmijärvi</span>
+    <h3>Nurmijärvi</h3>
+    <p>Joulukuusen tilauslomake, katso avoimet päivät & tuotteet</p>
+    <button class="toggle-form" data-target="form-nurmijarvi">2. Tilaa nyt</button>
+      <form id="form-nurmijarvi" class="order-form" data-json="nurmijarvi.json">
+        <label>Nimi:<br><input type="text" name="name" required></label><br>
+        <label>Toimitusosoite:<br><input type="text" name="address" required></label><br>
+        <label>Puhelinnumero:<br><input type="tel" name="phone" required></label><br>
+        <label>Sähköposti:<br><input type="email" name="email" required></label><br>
+        <label>Kuusen koko:<br>
+          <select name="size" required></select>
+        </label><br>
+        <label>Toimituspäivä:<br>
+          <select name="deliveryDate" required></select>
+        </label><br>
+        <button type="submit">Lähetä</button>
+      </form>
+  </div>
+
+  <!-- Tuusula, Kerava & Järvenpää -->
+  <div class="box">
+    <span class="tag">Tuusula, Kerava & Järvenpää</span>
+    <h3>Tuusula, Kerava & Järvenpää</h3>
+    <p>Joulukuusen tilauslomake, katso avoimet päivät & tuotteet</p>
+    <button class="toggle-form" data-target="form-tuusula">2. Tilaa nyt</button>
+    <form id="form-tuusula" class="order-form" data-json="TKJ.json">
+        <label>Nimi:<br><input type="text" name="name" required></label><br>
+        <label>Toimitusosoite:<br><input type="text" name="address" required></label><br>
+        <label>Puhelinnumero:<br><input type="tel" name="phone" required></label><br>
+        <label>Sähköposti:<br><input type="email" name="email" required></label><br>
+        <label>Kuusen koko:<br>
+          <select name="size" required></select>
+        </label><br>
+        <label>Toimituspäivä:<br>
+          <select name="deliveryDate" required></select>
+        </label><br>
+        <button type="submit">Lähetä</button>
+    </form>
+  </div>
+
+  <!-- Helsinki, Espoo & Vantaa -->
+  <div class="box">
+    <span class="tag">Helsinki, Espoo & Vantaa</span>
+    <h3>Helsinki, Espoo & Vantaa</h3>
+    <p>Joulukuusen tilauslomake, katso avoimet päivät & tuotteet</p>
+    <button class="toggle-form" data-target="form-pkseutu">2. Tilaa nyt</button>
+    <form id="form-pkseutu" class="order-form" data-json="pkseutu.json">
+        <label>Nimi:<br><input type="text" name="name" required></label><br>
+        <label>Toimitusosoite:<br><input type="text" name="address" required></label><br>
+        <label>Puhelinnumero:<br><input type="tel" name="phone" required></label><br>
+        <label>Sähköposti:<br><input type="email" name="email" required></label><br>
+        <label>Kuusen koko:<br>
+          <select name="size" required></select>
+        </label><br>
+        <label>Toimituspäivä:<br>
+          <select name="deliveryDate" required></select>
+        </label><br>
+        <button type="submit">Lähetä</button>
+    </form>
+  </div>
+  </div>
+</section>
+
+  <!-- YRITYS -->
+  <section id="yritys">
+    <div class="wrapper grid cols-2">
+      <div>
+        <h2>Aksula</h2>
+        <p class="lead">
+          <div class="box">
+            <h3>Joulukuusiretket koko perheelle 2023</h3>
+            - La 7.12 - Su 8.12 klo 10–16<br> 
+            - La 14.12 - Su 15.12 klo 10–18 <br>
+            - La 23.12 klo 9–19.<br><br>
+
+            Lauantaina 9.12 paikalla on myös Joulupukki klo 12–15.<br><br>
+
+            Kuusenhakureissulla on tarjolla pientä purtavaa, ja omat makkarat voi ottaa mukaan.<br>
+            Käytössä ovat myös kota ja grillikatos makkaranpaistoa varten.<br><br>
+
+            <strong>Joulukuusen myynti myös pihalta ja tilalta</strong><br>
+            Ma 11.12 – Pe 15.12 klo 14–18<br>
+            Ma 18.12 – Pe 22.12 klo 12–19<br>
+            Jouluaattona 24.12 klo 9–12<br><br>
+
+            Tarvittaessa kuusen voi hakea jo aiemmin – lähetä sähköpostia ennen tuloa!
+          </div>
+        </p>
+      </div>
+      <!--div><img src="2.webp" alt="Yrityksen kuva"></div-->
+    </div>
+  </section>
+
+<section id="tarjonta" class="section">
+  <h2 class="main-title">Galleria</h2>
+  <div id="cards-container">
+    <button id="prevBtn" class="carousel-btn"><i class="fas fa-chevron-left"></i></button>
+    <div id="cards-wrapper"></div>
+    <button id="nextBtn" class="carousel-btn"><i class="fas fa-chevron-right"></i></button>
+  </div>
+</section>
+
+
+<!-- YHTEYSTIEDOT -->
+<section id="yhteys">
+  <div class="wrapper">
+    <h2>Yhteystiedot</h2>
+    <div class="box">
+      <p>
+        <i class="fas fa-map-marker-alt"></i> Jukan metsätie 51, 05620 Hyvinkää<br>
+        <i class="fas fa-phone"></i> <a href="tel:0449749554">044 974 9554</a><br>
+        <i class="fas fa-envelope"></i> <a href="mailto:info@aksunjoulukuuset.fi">info@aksunjoulukuuset.fi</a>
+      </p>
+    </div>
+    <!-- YouTube-video upotettuna alaosaan -->
+    <div class="video-container" style="margin-top:20px;">
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/Ts2IriqFERo" 
+              title="YouTube video" frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrapper foot">
+      <div>
+        <h3>Aksun Joulukuuset</h3>
+        <p class="small">Y-tunnus: 3164058-8</p>
+        <p class="small">© easypagehub.fi - Kaikki oikeudet pidätetään. <span id="year"></span></p>
+      </div>
+      <div>
+        <h4>Linkit</h4>
+        <p class="small"><a href="https://www.aksula.fi/tietoa-meista/">Aksula (Kuusenhakuretket)</a><br><a href="https://www.aksula.fi/ajo-ohjeet/">Ajo-ohjeet Aksulaan</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+// Päivitä footerin vuosi
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Lomakkeiden näyttö/piilotus
+document.querySelectorAll('.toggle-form').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const form = document.getElementById(btn.dataset.target);
+    form.style.display = (form.style.display === 'block') ? 'none' : 'block';
+  });
+});
+
+// Lomakkeiden select-elementtien täyttö
+async function populateSelects() {
+  document.querySelectorAll('.order-form').forEach(async form => {
+    const jsonFile = form.dataset.json; // esim. "hyvinkaa.json"
+    const url = `https://raw.githubusercontent.com/easypagehub-test-web/aksu-test/refs/heads/main/${jsonFile}`;
+
+    try {
+      const res = await fetch(url);
+      const data = await res.json();
+
+      const sizeSelect = form.querySelector('select[name="size"]');
+      const dateSelect = form.querySelector('select[name="deliveryDate"]');
+
+      // Tyhjennä vanhat vaihtoehdot
+      sizeSelect.innerHTML = "";
+      dateSelect.innerHTML = "";
+
+      // Lisää vaihtoehdot JSONista
+      data.sizes.forEach(size => {
+        const option = document.createElement("option");
+        option.value = size;
+        option.textContent = size;
+        sizeSelect.appendChild(option);
+      });
+
+      data.dates.forEach(date => {
+        const option = document.createElement("option");
+        option.value = date;
+        option.textContent = date;
+        dateSelect.appendChild(option);
+      });
+    } catch (e) {
+      console.error("JSON loading error:", e);
+    }
+  });
+}
+
+// Kutsu selectien täyttöfunktiota
+populateSelects();
+
+// EmailJS-lähetys kaikille lomakkeille
+document.querySelectorAll(".order-form").forEach(form => {
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    emailjs.sendForm('service_f7hkwne', 'template_ggah22j', this)
+      .then(() => alert("Tilaus lähetetty!"))
+      .catch(err => alert("Virhe: " + err.text));
+    form.reset();
+  });
+});
+// Menu toggle
+const toggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('.nav-links');
+toggle.addEventListener('click', () => nav.classList.toggle('open'));
+
+</script>
+<script>
+// Karuselli
+const container = document.getElementById("cards-container");
+let currentIndex = 0;
+let slides = [];
+let wrapper = document.createElement("div");
+wrapper.style.display = "flex";            
+wrapper.style.transition = "transform 0.5s ease"; 
+wrapper.style.width = "max-content";       
+wrapper.style.alignItems = "center";
+container.appendChild(wrapper);
+
+let autoPlayInterval;
+const autoPlayDelay = 1500;
+
+// Funktio karusellin päivittämiseen
+function updateCarousel() {
+  if (slides.length === 0) return;
+  const slideWidth = slides[0].offsetWidth + 60;
+  const containerWidth = container.offsetWidth;
+  const offset = -currentIndex * slideWidth + containerWidth / 2 - slideWidth / 2;
+  wrapper.style.transform = `translateX(${offset}px)`;
+}
+
+// Käynnistä automaattipyöritys
+function startAutoPlay() {
+  stopAutoPlay();
+  autoPlayInterval = setInterval(() => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateCarousel();
+  }, autoPlayDelay);
+}
+function stopAutoPlay() {
+  clearInterval(autoPlayInterval);
+}
+
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+
+// Napit
+prevBtn.onclick = () => {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  updateCarousel();
+  startAutoPlay();
+};
+nextBtn.onclick = () => {
+  currentIndex = (currentIndex + 1) % slides.length;
+  updateCarousel();
+  startAutoPlay();
+};
+
+// Swipe / raahaus logiikka
+let startX = 0;
+let isDragging = false;
+
+container.addEventListener("mousedown", e => {
+  startX = e.clientX;
+  isDragging = true;
+  stopAutoPlay();
+});
+container.addEventListener("mouseup", e => {
+  if (!isDragging) return;
+  let endX = e.clientX;
+  if (endX < startX - 50) {
+    currentIndex = (currentIndex + 1) % slides.length;
+  } else if (endX > startX + 50) {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  }
+  updateCarousel();
+  startAutoPlay();
+  isDragging = false;
+});
+container.addEventListener("mouseleave", () => { isDragging = false; });
+
+// Mobiili swipe
+container.addEventListener("touchstart", e => {
+  startX = e.touches[0].clientX;
+  stopAutoPlay();
+});
+container.addEventListener("touchend", e => {
+  let endX = e.changedTouches[0].clientX;
+  if (endX < startX - 50) {
+    currentIndex = (currentIndex + 1) % slides.length;
+  } else if (endX > startX + 50) {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  }
+  updateCarousel();
+  startAutoPlay();
+});
+
+// Lataa kuvat galleria.jsonista
+const galleryJsonUrl = "https://raw.githubusercontent.com/easypagehub-test-web/aksu-test/refs/heads/main/galleria.json";
+const galleryBaseUrl = "https://raw.githubusercontent.com/easypagehub-test-web/aksu-test/refs/heads/main/";
+
+fetch(galleryJsonUrl)
+  .then(res => res.json())
+  .then(files => {
+    files.forEach(fileName => {
+      const slideWrapper = document.createElement("div");
+      slideWrapper.classList.add("slide-wrapper");
+
+      const img = document.createElement("img");
+      img.src = galleryBaseUrl + fileName;
+      img.alt = fileName;
+
+      slideWrapper.appendChild(img);
+      wrapper.appendChild(slideWrapper);
+      slides.push(slideWrapper);
+    });
+
+    if (slides.length > 0) {
+      updateCarousel();
+      startAutoPlay();
+    }
+  })
+  .catch(err => console.error("Virhe JSONin haussa:", err));
+
+// Lataa promo-teksti GitHubista
+const promoUrl = "https://raw.githubusercontent.com/easypagehub-test-web/aksu-test/refs/heads/main/promo.json";
+
+fetch(promoUrl)
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("promo-text").textContent = data.promoText;
+  })
+  .catch(err => console.error("Promo JSON error:", err));
+
+</script>
+
+</body>
+</html>

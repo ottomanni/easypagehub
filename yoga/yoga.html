@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yoga Instructor – Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+  <!-- Hero -->
+  <section class="bg-[url('jooga.jpg')] bg-cover bg-center min-h-[60vh] md:min-h-screen flex items-center justify-center text-center px-4">
+    <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold text-white drop-shadow-lg">
+      Yoga for Your Wellbeing
+    </h1>
+  </section>
+
+  <!-- About -->
+  <section class="max-w-4xl mx-auto p-6">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <!-- Text -->
+      <div>
+        <h2 class="text-2xl font-semibold mb-4">Hi, I'm Anna</h2>
+        <p>
+          I am a certified yoga instructor based in Helsinki. Yoga has been part 
+          of my life for over 10 years, and I want to share its benefits for 
+          wellbeing with others...
+        </p>
+      </div>
+      <!-- Image -->
+      <div class="flex justify-center">
+        <img src="anna.jpg" alt="Yoga Instructor Anna" 
+             class="rounded-2xl shadow-lg w-full max-w-sm object-cover">
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="bg-white py-8">
+    <div class="max-w-4xl mx-auto p-6">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <!-- Image -->
+        <div class="flex justify-center">
+          <img src="pricing.jpg" alt="Yoga session" 
+               class="rounded-2xl shadow-lg w-full max-w-sm object-cover">
+        </div>
+        <!-- Text -->
+        <div>
+          <h2 class="text-2xl font-semibold mb-4">Classes & Pricing</h2>
+          <ul class="space-y-2">
+            <li>Private session: €60 / 60 min</li>
+            <li>Group yoga: €15 / person</li>
+            <li>Course package (5x): €250</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="max-w-3xl mx-auto p-6">
+    <h2 class="text-2xl font-semibold mb-4">Get in Touch</h2>
+    <form class="space-y-4">
+      <input type="text" placeholder="Your Name" 
+             class="w-full border rounded p-3">
+      <input type="email" placeholder="Your Email" 
+             class="w-full border rounded p-3">
+      <textarea placeholder="Message" rows="4" 
+                class="w-full border rounded p-3"></textarea>
+      <button class="bg-green-600 text-white px-6 py-3 rounded w-full sm:w-auto">
+        Send
+      </button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300">
+    <div class="max-w-6xl mx-auto px-6 py-8 grid md:grid-cols-2 gap-8">
+      
+      <!-- Contact Info -->
+      <div>
+        <h3 class="text-lg font-semibold text-white mb-3">Contact</h3>
+        <p>Email: <a href="mailto:anna@yoga.com" class="text-green-400 hover:underline">anna@yoga.com</a></p>
+        <p>Phone: <a href="tel:+358401234567" class="text-green-400 hover:underline">+358 40 123 4567</a></p>
+        <p>Location: Helsinki, Finland</p>
+      </div>
+
+      <!-- Social Links -->
+      <div class="md:text-right">
+        <h3 class="text-lg font-semibold text-white mb-3">Follow Me</h3>
+        <div class="flex md:justify-end gap-4">
+          <!-- Instagram -->
+          <a href="https://instagram.com/" target="_blank" class="hover:text-green-400" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7z" />
+              <circle cx="12" cy="12" r="3.5" />
+              <circle cx="16.5" cy="7.5" r="1.5" />
+            </svg>
+          </a>
+          <!-- Facebook -->
+          <a href="https://facebook.com/" target="_blank" class="hover:text-green-400" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M22 12a10 10 0 10-11.5 9.9v-7H8v-3h2.5V9.5A3.5 3.5 0 0114 6h3v3h-2c-.5 0-1 .5-1 1v2h3l-.5 3H14v7A10 10 0 0022 12z"/>
+            </svg>
+          </a>
+          <!-- Email -->
+          <a href="mailto:anna@yoga.com" class="hover:text-green-400" aria-label="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path d="M4 4h16v16H4V4z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M22 6l-10 7L2 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-700 text-center py-4 text-sm text-gray-500">
+      © 2025 Yoga Instructor Anna – Helsinki
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yrityksille</title>
+  <meta name="description" content="Suomessa itse kasvatettuja joulukuusia toimitettuna" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="logo.png">
+  <style>
+    :root{
+      --bg:#0c1210;
+      --surface:#141b18;
+      --surface-2:#1a2520;
+      --text:#edf6f2;
+      --muted:#b9c7c1;
+      --accent:#6bbf59;
+      --accent-2:#a3d69a;
+      --radius:18px;
+      --shadow:0 10px 28px rgba(0,0,0,.3);
+      --maxw:1200px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Montserrat,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    img{max-width:100%;display:block;border-radius:var(--radius)}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrapper {
+      max-width: var(--maxw);
+      margin: auto;
+      padding: clamp(16px,3vw,28px);
+    }
+
+    /* HEADER */
+    header {
+      position:sticky;
+      top:0;
+      z-index:40;
+      background:rgba(0, 0, 0, 0.7);
+      backdrop-filter:blur(1px);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      text-align:center;
+      padding:10px 0;
+    }
+    .nav-bar{display:flex;flex-direction:column;align-items:center;gap:10px;position:relative}
+    .logo-area{display:flex;flex-direction:column;align-items:center;font-weight:700;gap:8px}
+    .logo-img {width:64px;height:auto;border-radius:10%}
+    .nav-links{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+    .nav-links a{padding:10px 14px;border-radius:999px;color:#fff}
+    .nav-links a:hover{background:rgba(255,255,255,.06);color:var(--accent-2)}
+
+    /* Hampurilainen */
+    .menu-toggle{
+      display:none;
+      position:absolute;
+      top:16px;
+      left:16px;
+      padding:8px;
+      border:1px solid rgba(255,255,255,.4);
+      border-radius:12px;
+      background:#fff;
+      z-index:1400;
+    }
+    .menu-toggle span{
+      display:block;
+      width:24px;
+      height:2px;
+      background:#000;
+      margin:5px 0;
+    }
+
+    @media (max-width:900px){
+      .nav-links{display:none}
+      .nav-links.open{
+        display:flex;
+        flex-direction:column;
+        gap:6px;
+        background:var(--surface);
+        padding:14px;
+        border-radius:16px;
+        position:absolute;
+        top:70px;left:16px;right:16px;
+        z-index:1300;
+      }
+      .menu-toggle{display:block}
+    }
+
+    /* CONTENT */
+    h1,h2{font-family:Merriweather,serif}
+    h1{font-size:clamp(28px,5vw,40px);margin-bottom:32px;text-align:center}
+    h2{font-size:clamp(20px,4vw,28px);margin-bottom:12px;color:var(--accent)}
+
+    section{margin-bottom:60px}
+    .content-box{
+      background:var(--surface);
+      border-radius:var(--radius);
+      padding:24px;
+      box-shadow:var(--shadow);
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+      align-items:center;
+    }
+    .content-box img{width:100%;height:auto;object-fit:cover}
+    @media(max-width:900px){
+      .content-box{grid-template-columns:1fr}
+    }
+    p{margin-bottom:16px;color:var(--muted)}
+
+    /* FOOTER */
+    footer{background:#0a0f0d;border-top:1px solid rgba(255,255,255,.08)}
+    .foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:20px}
+    @media(max-width:900px){.foot{grid-template-columns:1fr}}
+    .small{font-size:13px;color:var(--muted)}
+
+    /* some ikonit */
+    .social-banner {
+        position: fixed;
+        top: 20px;
+        right: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        z-index: 1000;
+      }
+      .social-banner a {
+        text-decoration: none;
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        line-height: 40px;
+        font-size: 1.2em;
+        text-align: center;
+        color: white;
+      }
+      .fa-facebook { background: #3B5998; }
+      .fa-whatsapp { background: #25D366; }
+      .fa-envelope { background: #EA4335; }
+      .fab:hover, .fas:hover { opacity: 0.7; }
+  </style>
+</head>
+<body>
+<!-- HEADER -->
+<header>
+  <div class="social-banner">
+    <a href="https://www.facebook.com/Aksunjoulukuuset" target="_blank" class="fab fa-facebook"></a>
+    <a href="mailto:info@aksunjoulukuuset.fi" target="_blank" class="fas fa-envelope"></a>
+  </div>
+  <div class="wrapper nav-bar">
+    <div class="logo-area">
+      <img src="logo.png" alt="Aksun Joulukuuset logo" class="logo-img">
+      <a href="index.html">Aksun Joulukuuset</a>
+    </div>
+    <nav class="nav-links">
+      <a href="aksunkuuset.html">Tilaa joulukuusi</a>
+      <a href="myyntipisteet.html">Myyntipisteet</a>
+      <a href="yrityksille.html">Yrityksille</a>
+      <a href="hoito-ohjeet.html">Hoito-ohjeet</a>
+      <a href="yrityksesta.html">Tietoa meistä</a>
+    </nav>
+    <!-- Hampurilainen -->
+    <button class="menu-toggle" aria-label="Valikko">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- CONTENT -->
+<main class="wrapper">
+  <h1>Yrityksille</h1>
+
+  <section>
+    <div class="content-box">
+      <div>
+        <h2>Vuokraus</h2>
+        <p>Aksun joulukuusilta on myös mahdollisuus vuokrata ulkokuusen jalkoja sekä myyntijalkoja, joulukuusten pakkauskoneita (koko 45). Valikoimastamme löytyy myös myyntisesonkiin pakkausverkkoa koko 34, 45 tai 65.</p>
+        <p><a href="mailto:info@aksunjoulukuuset.fi"><strong>Ota yhteyttä ja pyydä tarjous!</strong></a></p>
+      </div>
+      <img src="8.webp" alt="Vuokrauskalusto" />
+    </div>
+  </section>
+
+  <section>
+    <div class="content-box">
+      <div>
+        <h2>Joulukuusi toimitettuna</h2>
+        <p>Aksun joulukuuset toimittaa ympärivuoden joulukuusia myös yrityksille.</p>
+        <p>Aksun joulukuuset palvelee esimerkiksi taloyhtiöitä, markkinointitoimistoja, somistustoimistoja sekä tapahtumanjärjestäjiä!</p>
+        <p>Pituudet 0.5 m – 3.3 m.</p>
+        <p>Meiltä löytyy myös ulkokuusenjalkoja sekä Krinner-sisäjalkoja.</p>
+        <p><a href="aksunkuuset.html"><strong>Tilaa joulukuusi</strong></a> – <a href="mailto:info@aksunjoulukuuset.fi"><strong>Ota yhteyttä</strong></a></p>
+      </div>
+      <img src="4.webp" alt="Joulukuusen toimitus" />
+    </div>
+  </section>
+
+  <section>
+    <div class="content-box">
+      <div>
+        <h2>Lahjakorttien myynti</h2>
+        <p>Etsitkö sopivaa liikelahjaa yrityksellesi tai joululahjaa läheisellesi? Kotimainen joulukuusi on erinomainen liikelahja yrityksenne työntekijöille ja yhteistyökumppaneille. Se sopii mainiosti lahjaksi niin yritystoiminnan avainhenkilöille kuin kaikkiin koteihin.</p>
+        <p>Joulukuusi on yrityslahjana suosittu, eikä ihme – lahjaksi saatu kuusi on yhtä aikaa kaunis tunnelman luoja ja ekologinen valinta.</p>
+        <p>Aksun joulukuuset on täysin kotimainen, joten meiltä ostetuilla lahjakorteilla tuet samalla myös suomalaista työtä. Aksulta löytyy kolmea valloittavaa kuusilajiketta: metsäkuusi, omorika ja pihdat.</p>
+        <p>Kun ostat kotimaisen joulukuusen, viestit lämpimiä ja kestäviä arvoja. Aksun joulukuuset miellyttää varmasti saajan.</p>
+      </div>
+      <img src="lahjakortit.png" alt="Lahjakortti joulukuuselle" />
+    </div>
+  </section>
+
+  <section>
+    <div class="content-box">
+      <div>
+        <h2>Tukkumyynti</h2>
+        <p>Aksun joulukuusilla on tukkureille saatavana tarvittaessa hyvinkin suuria määriä toimitukseen joulusesongista 2026 eteenpäin. Pystymme toimittamaan jopa tuhannen puun eriä.</p>
+        <p><strong>2025 joulukuusien tukkuhinnat!</strong></p>
+        <p>Joulukuusten tukkumyynnistä vastaa 2025 jouluna Aksun isäpappa Hannu Toikka.</p>
+        <p><strong>Ota yhteyttä suoraan Hannuun:</strong><br>
+          0400 491 637<br>
+          Kulomäentie 341, 01900 Nurmijärvi.</p>
+        <p class="small">Päiväys 3.8.2025</p>
+      </div>
+      <img src="3.webp" alt="Joulukuusien tukkumyynti" />
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrapper foot">
+    <div>
+      <h3>Aksun Joulukuuset</h3>
+      <p class="small">Y-tunnus: 3164058-8</p>
+      <p class="small">© easypagehub.fi - Kaikki oikeudet pidätetään. <span id="year"></span></p>
+    </div>
+    <div>
+      <h4>Linkit</h4>
+      <p class="small"><a href="https://www.aksula.fi/tietoa-meista/">Aksula (Kuusenhakuretket)</a><br><a href="https://www.aksula.fi/ajo-ohjeet/">Ajo-ohjeet Aksulaan</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Päivitä footerin vuosi
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Hampurilainen
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+  });
+</script>
+</body>
+</html>
